@@ -1,0 +1,22 @@
+<% if @kitten %>
+<h1><%= @kitten.name %></h1>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Cuteness</th>
+    <th>Softness</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @kitten.name%></td>
+      <td><%= @kitten.age %></td>
+      <td><%= @kitten.cuteness %></td>
+      <td><%= @kitten.softness %></td>
+      <td><%= link_to "Edit", edit_kitten_path(@kitten.id)%></td>
+      <td><%= link_to "Delete", kitten_path(@kitten.id), method: :delete, data:{confirm: "That kitten is to young to die </3"}%></td>
+    </tr>
+  </tbody>
+</table>
+<% end %>
+<h4><%= link_to "All", root_url %></h4>

@@ -1,0 +1,12 @@
+<%= form_for @kitten do |k| %>
+  <%= k.hidden_field(:kitten_id, value: @kitten.id) %>
+  Name: <%= k.text_field :name%>
+  </br>
+  Age: <%= k.select :age, options_for_select(0..10, @kitten.age)%>
+  </br>
+  Cuteness: <%= k.select :cuteness, options_for_select(0..10, @kitten.cuteness) %>
+  </br>
+  Softness: <%= k.select :softness, options_for_select(0..10, @kitten.softness) %>
+  </br>
+  <%= k.submit 'Save' %>
+<% end %>
